@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.event.Event;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.mcteam.ancientgates.commands.BaseCommand;
@@ -74,8 +73,8 @@ public class Plugin extends JavaPlugin {
 		
 		// Register events
 		PluginManager pm = this.getServer().getPluginManager();
-		getServer().getPluginManager().registerEvents(new PluginBlockListener(this), this);
-		getServer().getPluginManager().registerEvents(new PluginPlayerListener(this), this);
+		pm.registerEvents(new PluginBlockListener(this), this);
+		pm.registerEvents(new PluginPlayerListener(this), this);
 		
 		log("Enabled");
 	}
@@ -92,7 +91,6 @@ public class Plugin extends JavaPlugin {
 	// Commands
 	// -------------------------------------------- //
 	
-	@SuppressWarnings("unchecked")
 	public String getBaseCommand() {
 		if (this.baseCommand != null) 
                 {

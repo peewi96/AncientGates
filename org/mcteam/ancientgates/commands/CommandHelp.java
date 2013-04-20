@@ -2,7 +2,6 @@ package org.mcteam.ancientgates.commands;
 
 import java.util.ArrayList;
 
-import org.bukkit.command.CommandSender;
 import org.mcteam.ancientgates.util.TextUtil;
 
 public class CommandHelp extends BaseCommand {
