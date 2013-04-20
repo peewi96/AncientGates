@@ -143,7 +143,8 @@ final class Streams {
     }
   }
 
-  static Writer writerForAppendable(Appendable appendable) {
+  @SuppressWarnings("resource")
+static Writer writerForAppendable(Appendable appendable) {
     return appendable instanceof Writer ? (Writer) appendable : new AppendableWriter(appendable);
   }
 
